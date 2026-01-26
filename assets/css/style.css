@@ -223,6 +223,7 @@ p {
   letter-spacing: 0.02em;
   border: 1px solid transparent;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .modal-trigger {
