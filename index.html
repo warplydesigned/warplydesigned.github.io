@@ -14,9 +14,23 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Simulation + Intelligent Automation | Warply Designed</title>
-  <meta content="Simulation, automation, and robotics systems with intelligent control and real-time digital twins." name="description">
-  <meta content="simulation, automation, robotics, intelligent systems, digital twin" name="keywords">
+  <title>Custom AI Automation &amp; Rapid Software Delivery | Warply Designed</title>
+  <meta content="Warply Designed is a Vancouver technical studio that ships custom AI workflows, internal tools, and Python software for B2B teams in a fixed 2-week sprint." name="description">
+  <meta content="custom AI automation, AI workflows, internal tools, rapid MVP development, Python development, LLM agents, RAG systems, B2B software development, Vancouver" name="keywords">
+  <meta content="Warply Designed" name="author">
+  <link rel="canonical" href="https://warplydesigned.com/">
+  <meta name="theme-color" content="#0b0f14">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Warply Designed">
+  <meta property="og:title" content="Ship custom AI workflows and internal software in 2 weeks">
+  <meta property="og:description" content="A fixed-scope 2-week sprint: we diagnose one operational bottleneck and ship a deployed AI workflow, internal tool, or MVP for your B2B team.">
+  <meta property="og:url" content="https://warplydesigned.com/">
+  <meta property="og:image" content="https://warplydesigned.com/assets/img/about-img.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ship custom AI workflows and internal software in 2 weeks">
+  <meta name="twitter:description" content="Custom AI systems, automation, and rapid software delivery for B2B teams. Vancouver, Canada.">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
@@ -25,10 +39,22 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Warply Designed",
+    "url": "https://warplydesigned.com/",
+    "description": "Custom AI workflows, internal tools, and rapid software delivery for B2B teams.",
+    "areaServed": "North America",
+    "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressCountry": "CA" }
+  }
+  </script>
 </head>
 
 <body>
@@ -41,10 +67,10 @@
       </button>
       <nav id="site-nav" class="site-nav">
         <a href="#capabilities">Capabilities</a>
-        <a href="#systems">Systems</a>
+        <a href="#sprint">The 2-Week Sprint</a>
         <a href="#process">Process</a>
         <a href="#testimonials">Testimonials</a>
-        <a class="nav-cta" href="#contact">Start a project</a>
+        <a class="nav-cta" href="#audit" data-booking>Book a Call</a>
       </nav>
     </div>
   </header>
@@ -53,43 +79,120 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow">Simulation + Intelligent Robotics</span>
-          <h1>Designing the digital twin for automation, autonomy, and real-time control.</h1>
+          <span class="eyebrow">AI-first technical studio · Vancouver</span>
+          <h1>Ship custom AI workflows and internal software in 2 weeks&mdash;not 2 quarters.</h1>
           <p>
-            Warply Designed builds simulation-driven systems for robotics and automation teams, blending
-            Unreal Engine craft, backend reliability, and intelligent control layers into one focused pipeline.
+            Warply Designed helps B2B teams eliminate manual bottlenecks and turn stalled specs into deployed
+            Python &amp; AI systems at agent-accelerated speed.
           </p>
           <div class="hero-actions">
-            <a class="btn primary" href="#contact">Book a discovery call</a>
-            <a class="btn ghost" href="#capabilities">Explore capabilities</a>
+            <a class="btn primary" href="#audit" data-booking>Book a 20-Min Bottleneck Audit</a>
+            <a class="btn ghost" href="#sprint">See the 2-Week Sprint</a>
           </div>
           <div class="hero-meta">
             <div class="meta-card">
-              <span class="meta-title">Simulation</span>
-              <span class="meta-body">Real-time environments for testing and training</span>
+              <span class="meta-title">15+ years</span>
+              <span class="meta-body">Senior engineering across Python, APIs, backend &amp; mobile</span>
             </div>
             <div class="meta-card">
-              <span class="meta-title">Automation</span>
-              <span class="meta-body">Backends, telemetry, and system orchestration</span>
+              <span class="meta-title">10 days</span>
+              <span class="meta-body">Fixed scope, fixed timeline, deployed result</span>
             </div>
             <div class="meta-card">
-              <span class="meta-title">Robotics</span>
-              <span class="meta-body">Control loops, autonomy, and safety workflows</span>
+              <span class="meta-title">Zero lock-in</span>
+              <span class="meta-body">Documented code on your infrastructure</span>
             </div>
           </div>
         </div>
+
         <div class="hero-sim reveal" style="--delay: 0.2s;">
-          <div class="sim-frame">
-            <div class="sim-header">
-              <span>Digital twin feed</span>
-              <span class="sim-badge">Live in browser</span>
+          <div class="pipe" id="pipeline" aria-label="Animated preview of an AI workflow pipeline: messy tickets, AI agent validation, clean ops dashboard">
+            <div class="pipe-header">
+              <span>AI Workflow &amp; System Orchestration</span>
+              <span class="pipe-badge"><span class="status-dot"></span>Live</span>
             </div>
-            <canvas id="sim-canvas" aria-label="Robotics simulation preview"></canvas>
-            <div class="sim-footer">
+
+            <div class="pipe-body">
+              <div class="pipe-col">
+                <span class="pipe-label">01 &middot; Incoming</span>
+                <ul class="pipe-list" id="pipe-in" aria-hidden="true"></ul>
+              </div>
+
+              <div class="pipe-col pipe-agent">
+                <span class="pipe-label">02 &middot; AI Agent</span>
+                <div class="agent-box">
+                  <div class="agent-row"><span>Parse &amp; classify</span><i class="chk" data-step="0"></i></div>
+                  <div class="agent-row"><span>Validate vs. rules</span><i class="chk" data-step="1"></i></div>
+                  <div class="agent-row"><span>Human approval</span><i class="chk" data-step="2"></i></div>
+                  <div class="agent-bar"><span id="agent-bar"></span></div>
+                </div>
+              </div>
+
+              <div class="pipe-col">
+                <span class="pipe-label">03 &middot; Ops dashboard</span>
+                <ul class="pipe-list out" id="pipe-out" aria-hidden="true"></ul>
+              </div>
+            </div>
+
+            <div class="pipe-stats">
+              <div><b id="stat-processed">0</b><span>processed</span></div>
+              <div><b id="stat-auto">0%</b><span>auto-resolved</span></div>
+              <div><b id="stat-latency">&mdash;</b><span>avg latency</span></div>
+              <div><b id="stat-flag">0</b><span>flagged</span></div>
+            </div>
+
+            <div class="pipe-footer">
               <span class="status-dot"></span>
-              Running a lightweight Three.js simulation model
+              <span id="pipe-status">API healthy &middot; evals passing &middot; 0 errors</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sprint" class="section muted">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Flagship offer</span>
+          <h2>The 2-Week AI &amp; Automation Sprint</h2>
+          <p>
+            A fixed-scope, 10-business-day sprint. We diagnose one high-friction operational bottleneck or stalled
+            feature, then ship a deployed, working AI workflow, internal tool, or MVP.
+          </p>
+        </div>
+
+        <div class="compare reveal">
+          <div class="compare-col">
+            <h3>Why a fixed sprint beats the alternatives</h3>
+            <ul class="feature-list">
+              <li><strong>vs. a full-time hire:</strong> no 3&ndash;6 month recruiting cycle, salary, or ramp-up. Senior output starts on day one.</li>
+              <li><strong>vs. agency retainers:</strong> fixed price and a fixed scope. No bloated teams, account managers, or open-ended hours.</li>
+              <li><strong>vs. stalled specs:</strong> a working system in production in 10 days is worth more than a quarter of planning.</li>
+            </ul>
+          </div>
+          <div class="compare-col timeline" aria-label="Sprint timeline">
+            <div class="tl"><span>Days 1&ndash;2</span><b>Audit &amp; architecture</b></div>
+            <div class="tl"><span>Days 3&ndash;8</span><b>Build, test &amp; iterate</b></div>
+            <div class="tl"><span>Days 9&ndash;10</span><b>Deploy &amp; handover</b></div>
+          </div>
+        </div>
+
+        <div class="cards three">
+          <article class="card reveal" style="--delay: 0.05s;">
+            <span class="card-num">01</span>
+            <h3>Bottleneck &amp; Architecture Audit</h3>
+            <p>Map the data sources, edge cases, and ROI before writing a single line of code.</p>
+          </article>
+          <article class="card reveal" style="--delay: 0.1s;">
+            <span class="card-num">02</span>
+            <h3>Production-Ready Build</h3>
+            <p>A custom Python/TypeScript AI agent, internal dashboard, or API integration, built and tested.</p>
+          </article>
+          <article class="card reveal" style="--delay: 0.15s;">
+            <span class="card-num">03</span>
+            <h3>Full Handover &amp; Zero Lock-In</h3>
+            <p>Clean, documented code deployed to your infrastructure, plus optional ongoing iteration.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -97,100 +200,69 @@
     <section id="capabilities" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <h2>Capabilities built for intelligent systems</h2>
-          <p>From immersive prototyping to dependable production systems, every layer is designed for clarity and control.</p>
+          <h2>Capabilities built for B2B operations</h2>
+          <p>Senior engineering, accelerated by AI agents, applied to the work that slows your team down.</p>
         </div>
         <div class="cards">
           <article class="card reveal" style="--delay: 0.05s;">
-            <h3>Simulation environments</h3>
-            <p>Unreal Engine and Three.js scenes for testing automation logic, safety, and operator training.</p>
+            <h3>AI Workflow &amp; Ops Automation</h3>
+            <p>Custom LLM pipelines and autonomous agents that eliminate repetitive back-office, triage, and data-entry work.</p>
           </article>
           <article class="card reveal" style="--delay: 0.1s;">
-            <h3>Digital twin orchestration</h3>
-            <p>Live telemetry pipelines that mirror physical systems and surface actionable insights.</p>
+            <h3>Rapid MVP &amp; Internal Tooling</h3>
+            <p>Full-stack Python and React/TypeScript applications built in weeks to validate products or empower internal teams.</p>
           </article>
           <article class="card reveal" style="--delay: 0.15s;">
-            <h3>Robotic control layers</h3>
-            <p>Behavior planning, control loop tuning, and sensor fusion for autonomous workflows.</p>
+            <h3>Complex API &amp; System Integrations</h3>
+            <p>Connecting legacy backends, third-party SaaS tools, and modern AI models into one reliable pipeline.</p>
           </article>
           <article class="card reveal" style="--delay: 0.2s;">
-            <h3>Backend automation</h3>
-            <p>Custom server-side services for scheduling, data services, and system reliability.</p>
+            <h3>Data Pipelines &amp; RAG Systems</h3>
+            <p>Structured retrieval and knowledge systems grounded in your company's actual documents and databases.</p>
           </article>
           <article class="card reveal" style="--delay: 0.25s;">
-            <h3>Edge + mobile tools</h3>
-            <p>On-device dashboards and field tooling that keep teams connected to the system.</p>
+            <h3>Guardrails, Evals &amp; Reliability</h3>
+            <p>Deterministic validation, human-in-the-loop approvals, and observability so AI systems don't break in production.</p>
           </article>
           <article class="card reveal" style="--delay: 0.3s;">
-            <h3>Immersive experiences</h3>
-            <p>Training and presentation layers that make complex automation workflows easy to grasp.</p>
+            <h3>Legacy Rescue &amp; Modernization</h3>
+            <p>Stepping into complex, multi-language codebases (Python, JS/TS, mobile, C++) to untangle bottlenecks and ship fixes fast.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="systems" class="section muted">
-      <div class="container split">
-        <div class="reveal">
-          <h2>Systems focus</h2>
-          <p>
-            The work centers on intelligent systems that need clarity, robustness, and a clear digital narrative.
-          </p>
-          <ul class="feature-list">
-            <li>Multi-robot coordination for warehouses, labs, and field deployments.</li>
-            <li>Simulation-first validation to de-risk autonomy before hardware is deployed.</li>
-            <li>Operational dashboards that tie real-time metrics to human decisions.</li>
-            <li>AI-assisted control layers are designed to be explainable and safe.</li>
-          </ul>
-        </div>
-        <div class="system-cards">
-          <div class="system-card reveal" style="--delay: 0.1s;">
-            <span class="system-title">Digital Twin Studio</span>
-            <p>Build immersive, real-time twins aligned with sensor data and operational constraints.</p>
-          </div>
-          <div class="system-card reveal" style="--delay: 0.2s;">
-            <span class="system-title">Automation Command</span>
-            <p>Orchestrate workflows, pipelines, and safety checks with consistent visibility.</p>
-          </div>
-          <div class="system-card reveal" style="--delay: 0.3s;">
-            <span class="system-title">Robotic Intelligence</span>
-            <p>Prototype and deploy intelligent behaviors with a focus on reliability.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process" class="section">
+    <section id="process" class="section muted">
       <div class="container">
         <div class="section-head reveal">
-          <h2>Process built for complex automation</h2>
-          <p>Each engagement aligns discovery, simulation, and deployment so the system behaves as expected.</p>
+          <h2>A simple, three-step process</h2>
+          <p>Every engagement follows the same fixed-scope path from first call to production.</p>
         </div>
         <div class="process-grid">
           <div class="process-step reveal" style="--delay: 0.05s;">
             <span class="step-number">01</span>
-            <h3>System mapping</h3>
-            <p>Model the workflow, environment, and risk points before touching hardware.</p>
+            <h3>Bottleneck Discovery</h3>
+            <p>Identify the highest-leverage manual workflow or stalled product spec and lock a fixed 2-week scope.</p>
           </div>
           <div class="process-step reveal" style="--delay: 0.1s;">
             <span class="step-number">02</span>
-            <h3>Simulation build</h3>
-            <p>Create the digital twin, data interfaces, and validation scenarios.</p>
+            <h3>Agent-Accelerated Build</h3>
+            <p>Rapidly architect, build, and test the system using senior engineering oversight paired with modern AI tooling.</p>
           </div>
           <div class="process-step reveal" style="--delay: 0.15s;">
             <span class="step-number">03</span>
-            <h3>Deployment + iteration</h3>
-            <p>Roll out to production, monitor performance, and iterate with confidence.</p>
+            <h3>Deploy &amp; Scale</h3>
+            <p>Ship directly to your cloud environment with full documentation, then expand into new workflows only if ROI is proven.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="testimonials" class="section muted">
+    <section id="testimonials" class="section">
       <div class="container">
         <div class="section-head reveal">
           <h2>Trusted partner feedback</h2>
-          <p>Long-term collaborators highlight the clarity, communication, and execution quality delivered.</p>
+          <p>Collaborators highlight the clarity, communication, and technical rigor delivered.</p>
         </div>
         <div class="testimonials">
           <article class="testimonial-card reveal" style="--delay: 0.05s;">
@@ -211,41 +283,24 @@
             <span class="testimonial-name">Mark Powers</span>
             <span class="testimonial-role">Senior Production Lead</span>
           </article>
-          <article class="testimonial-card reveal" style="--delay: 0.15s;">
-            <p>
-              Bruce worked hard, listened and participated in class discussion from the first moment he set foot into the
-              classroom and continued to seek ways to improve his work, both in quality and quantity.
-            </p>
-            <span class="testimonial-name">Scott Swanson</span>
-            <span class="testimonial-role">Owner, Screen Full'a Dreams Productions</span>
-          </article>
-          <article class="testimonial-card reveal" style="--delay: 0.2s;">
-            <p>
-              Bruce always received top marks in my class for excellent work and always put his best effort forward. He worked
-              well on his own and as a strong contributor to team work.
-            </p>
-            <span class="testimonial-name">Dan Coburn</span>
-            <span class="testimonial-role">Game Design</span>
-          </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="audit" class="section">
       <div class="container">
         <div class="cta reveal">
           <div>
-            <h2>Ready to prototype a smarter system?</h2>
-            <p>Share your simulation, automation, or robotics challenge, and we will shape a focused plan.</p>
+            <h2>Have a manual bottleneck or stalled build slowing your team down?</h2>
+            <p>Let&rsquo;s spend 20 minutes mapping what we can ship in a single 2-week sprint.</p>
           </div>
-          <button class="btn primary modal-trigger" type="button" data-modal-target="lead-modal">
-            Start with a brief
-          </button>
+          <a class="btn primary" href="#audit" data-booking>Book a 20-Min Bottleneck Audit</a>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Booking modal (fallback when no BOOKING_URL is set in assets/js/main.js) -->
   <div class="modal" id="lead-modal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-overlay" data-modal-close></div>
     <div class="modal-panel" role="document">
@@ -258,12 +313,11 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>&copy; 2026 Warply Designed. All Rights Reserved.</span>
-      <span>Simulation, automation, robotics, intelligent systems.</span>
+      <span>&copy; 2026 Warply Designed. All Rights Reserved. Custom AI Systems, Automation &amp; Rapid Software Delivery.</span>
     </div>
   </footer>
 
-  <script type="module" src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
