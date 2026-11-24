@@ -233,9 +233,6 @@ p {
   cursor: pointer;
 }
 
-.modal-trigger {
-  font-size: 16px;
-}
 
 .btn.primary {
   background: var(--accent);
@@ -435,63 +432,6 @@ section {
   justify-content: space-between;
   gap: 32px;
   border: 1px solid rgba(52, 211, 153, 0.25);
-}
-
-.modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  z-index: 100;
-}
-
-.modal.is-open {
-  display: flex;
-}
-
-.modal-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(8, 12, 18, 0.6);
-  backdrop-filter: blur(6px);
-}
-
-.modal-panel {
-  position: relative;
-  background: #fff;
-  border-radius: var(--radius-lg);
-  max-width: 600px;
-  width: min(92vw, 600px);
-  max-height: 90vh;
-  overflow: auto;
-  padding: 24px;
-  box-shadow: 0 30px 60px rgba(12, 21, 31, 0.2);
-  z-index: 1;
-}
-
-.modal-close {
-  border: none;
-  background: transparent;
-  font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
-  color: #0b0f14;
-  position: absolute;
-  top: 16px;
-  right: 18px;
-}
-
-.modal-body {
-  padding-top: 8px;
-  display: flex;
-  justify-content: center;
-}
-
-.modal-body iframe {
-  width: 100%;
-  max-width: 560px;
 }
 
 .site-footer {

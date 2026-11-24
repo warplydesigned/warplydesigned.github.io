@@ -1,5 +1,5 @@
-// Set this to your Cal.com / Calendly link. Leave empty to open the on-page form modal instead.
-const BOOKING_URL = "";
+// Cal.com booking: opens as an embedded popup; falls back to a plain new-tab link if the embed can't load.
+const CAL_LINK = "warplydesigned/20-min-bottleneck-audit";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -60,63 +60,41 @@ emailLinks.forEach((link) => {
   link.setAttribute("href", `mailto:${user}@${domain}${query}`);
 });
 
-const leadModal = document.getElementById("lead-modal");
-const openModal = (modal) => {
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-};
+(function (C, A, L) {
+  const p = (a, ar) => a.q.push(ar);
+  const d = C.document;
+  C.Cal = C.Cal || function () {
+    const cal = C.Cal;
+    const ar = arguments;
+    if (!cal.loaded) {
+      cal.ns = {};
+      cal.q = cal.q || [];
+      const s = d.head.appendChild(d.createElement("script"));
+      s.src = A;
+      s.onerror = () => { C.calFailed = true; };
+      cal.loaded = true;
+    }
+    if (ar[0] === L) {
+      const api = function () { p(api, arguments); };
+      api.q = api.q || [];
+      p(cal, ar);
+      return;
+    }
+    p(cal, ar);
+  };
+})(window, "https://app.cal.com/embed/embed.js", "init");
+
+Cal("init", { origin: "https://app.cal.com" });
+Cal("ui", { theme: "dark", styles: { branding: { brandColor: "#34d399" } }, hideEventTypeDetails: false, layout: "month_view" });
 
 document.querySelectorAll("[data-booking]").forEach((link) => {
   link.addEventListener("click", (event) => {
-    if (BOOKING_URL) {
-      event.preventDefault();
-      window.open(BOOKING_URL, "_blank", "noopener");
-    } else if (leadModal) {
-      event.preventDefault();
-      openModal(leadModal);
+    if (window.calFailed) {
+      return; // let the link open Cal.com in a new tab
     }
+    event.preventDefault();
+    Cal("modal", { calLink: CAL_LINK, config: { layout: "month_view", theme: "dark" } });
   });
-});
-
-const modalTriggers = document.querySelectorAll("[data-modal-target]");
-const modalCloseButtons = document.querySelectorAll("[data-modal-close]");
-
-const closeModal = (modal) => {
-  if (!modal) {
-    return;
-  }
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-};
-
-modalTriggers.forEach((trigger) => {
-  const targetId = trigger.dataset.modalTarget;
-  const modal = document.getElementById(targetId);
-  if (!modal) {
-    return;
-  }
-
-  trigger.addEventListener("click", () => {
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  });
-});
-
-modalCloseButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    const modal = event.target.closest(".modal");
-    closeModal(modal);
-  });
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    const openModal = document.querySelector(".modal.is-open");
-    closeModal(openModal);
-  }
 });
 
 // ---- Hero: AI workflow pipeline preview (lightweight DOM animation, no dependencies) ----
